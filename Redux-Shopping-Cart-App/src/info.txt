@@ -1,0 +1,39 @@
+Now we've covered fxnality of cart,logout, layout etc. 
+for Shopping App website
+
+We'll now send the Shopping cart data to backend, for that
+the reducers must be pure,
+                    side effect free 
+                    synchronous function always
+
+*If we've an HTTP fxn which is an async task to such code mustn't go to reducer functions
+We can't send HTTP requests inside the reducers
+Can't use any fetch and send req from one reducer function to fetch the req
+ //-----Don't run the async code here ----//
+
+ 1. useEffect hook
+ 2. create an action creator which will allow us to run the async code
+
+
+ //Using Firebase
+ If we directly add a prod to firebase then backend doesn't know whether the prod/
+ is already a part of cart, so need to add another fxns to fireBase to do that 
+ (adding a server side code & then fxns)
+
+ OR
+
+ Another soln is to let Redux manage the state on its own, after it does
+ then we update the server on backend with updated state from Redux
+
+ So we first work on the FrontEnd and let redux update the store, then will 
+ send the request to server
+ (will do this in main App.js file)
+
+
+ */ Using firebase
+  create proj, build->realTime db
+  Rules-> read,write: true
+ */
+
+ 2. Action creator: react thunk-> function which delays an action until later
+ 
